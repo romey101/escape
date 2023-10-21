@@ -1,0 +1,521 @@
+@font-face {
+    font-family: Raqami;
+    src: url(./assets/alfont_com_AlFont_com_Raqami.ttf);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raqami;
+  }
+  
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+      130deg,
+       hsla(243, 100%, 41%, 1) 0%,
+      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
+      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
+      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
+      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
+      hsla(1, 100%, 58%, 1) 100%
+    );
+  }
+  
+  body::after {
+    position: absolute;
+    content: '';
+    width: 280px;
+    height: 280px;
+    bottom: 0;
+    left: 0;
+    background-image: url(./images/BG.png);
+    background-position: right top;
+    background-size: 140%;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    padding: 4rem 1rem 2rem;
+  }
+  
+  .content {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .logo {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .text {
+    font-size: clamp(1rem, 15vw, 3rem);
+    color: white;
+  }
+  
+  .game {
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  
+  @media screen and (min-width: 1000px) {
+    body {
+      background-image: linear-gradient(
+        180deg,
+            hsla(243, 100%, 41%, 1) 0%,
+      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
+      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
+      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
+      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
+      hsla(1, 100%, 58%, 1) 100%
+      );
+    }
+  
+    body::after {
+      width: 38%;
+      height: 90%;
+      top: 0;
+      bottom: auto;
+      right: 0;
+      left: auto;
+      background-image: url(./images/BG.png);
+      background-position: left -120px;
+      background-size: cover;
+    }
+  
+    main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 1rem;
+      max-width: 100%;
+      padding: 2rem 3rem;
+    }
+  
+    .content {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      padding-top: 5rem;
+      gap: 3rem;
+    }
+  
+    .logo {
+      width: 100%;
+      max-width: 600px;
+    }
+  
+    .text {
+      font-size: 5rem;
+    }
+  
+    .game {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  
+    .container {
+      width: 450px;
+      height: 450px;
+    }
+   
+  }
+  
+  @media screen and (min-width: 1280px) {
+    body::after {
+      width: 40%;
+      height: 75%;
+      background-position: -30% -120px;
+      background-size: 130%;
+    }
+  
+    .container {
+      width: 530px;
+      height: 530px;
+    }
+ 
+  }
+  
+  @media screen and (min-width: 1440px) {
+    body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    }
+    
+    .game {
+      padding-top: 80px;
+    }
+  
+    .container {
+      width: 560px;
+      height: 560px;
+    }
+ 
+  }
+  
+  .bodyOverflow {
+    overflow: hidden;
+  }
+  
+
+  /*
+  CSS Reset from
+  Josh: https://www.joshwcomeau.com/css/custom-css-reset/
+  Andy-bell: https://andy-bell.co.uk/a-more-modern-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+btn,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  cursor: pointer;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+btn,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+/* Reset Ends */
+
+/* Hides screen-reader contents */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Retropix;
+  font-weight: 400;
+  src: url(./assets/retropix.otf);
+}
+
+
+
+/* btn component starts */
+.btn {
+   
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 10px;
+  font-size: inherit;
+  font-weight: bold;
+  color: var(--white);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-purple),
+    var(--btn-dark-purple)
+  );
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 0px var(--btn-dark-purple);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:is(:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px var(--btn-dark-purple);
+}
+
+.btn:is(:active) {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-dark-purple),
+    var(--btn-purple)
+  );
+}
+
+/* btn component ends */
+
+html {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+ body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+      130deg,
+       hsla(243, 100%, 41%, 1) 0%,
+      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
+      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
+      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
+      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
+      hsla(1, 100%, 58%, 1) 100%
+    );
+  }
+
+main {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 90% 10%;
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 1rem;
+  background-image: url(./images/question\ mark.png);
+  background-repeat: no-repeat;
+  background-position: -75px 105%;
+  background-size: 200px;
+  overflow: hidden;
+}
+
+
+
+.quiz {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
+}
+
+.quiz__question {
+  display: grid;
+  place-content: center;
+  max-width: 80ch;
+  font-family: 'Retropix', monospace;
+  margin-top: 80%;
+}
+
+.quiz__question .code span {
+  display: block;
+  color: aliceblue;
+  padding: 5px;
+ 
+}
+
+.quiz__question .code .code__highlighted {
+ align-items: center;
+text-align: center;
+}
+
+
+.btn__option {
+  width: 250px;
+}
+
+.quiz__btn:is(:disabled) {
+  pointer-events: none;
+}
+
+.quiz__option_correct {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-green),
+    var(--btn-dark-green)
+  );
+  box-shadow: 0px 4px 0px var(--btn-dark-green);
+}
+
+.quiz__option_correct:is(:hover) {
+  box-shadow: 0px 6px 0px var(--btn-dark-green);
+}
+
+.quiz__option_correct:is(:active) {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-green),
+    var(--btn-dark-green)
+  );
+  box-shadow: 0px 4px 0px var(--btn-dark-green);
+}
+
+.quiz__option_wrong {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-red),
+    var(--btn-dark-red)
+  );
+  box-shadow: 0px 4px 0px var(--btn-dark-red);
+}
+
+.quiz__option_wrong:is(:hover) {
+  box-shadow: 0px 6px 0px var(--btn-dark-red);
+}
+
+.quiz__option_wrong:is(:active) {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--btn-dark-red),
+    var(--btn-red)
+  );
+}
+
+.quiz__next-btn {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: block;
+  border: none;
+  background: none;
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 15%;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+.quiz__next-btn:is(:disabled) {
+  opacity: 0.3;
+}
+
+.quiz__next-btn > img {
+  max-width: 30px;
+  margin: auto;
+}
+
+.quiz__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiz__input {
+  color: var(--white);
+  margin: 80px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(0, 2%, 12%),
+    hsl(0, 1%, 28%)
+  );
+}
+
+.quiz__input::placeholder {
+  color: var(--white);
+}
+
+
+
+  .btn__option {
+    width: 400px;
+  }
+

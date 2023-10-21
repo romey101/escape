@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spin wheel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./locale.js" type="module"></script>
+    <script src="./script.js" type="module" defer></script>
+  </head>
+  <body>
+    <!-- <div class="bulit"></div> -->
+    <main>
+      <section class="content">
+        <img src="./images/LOGO.png" alt="" class="logo" />
+        <h1 class="text">Escape the room</h1>
+      </section>
+      <section class="quiz" data-type="form">
+        <div class="quiz__question">
+          <p class="code">
+            <span class="code__highlighted">Find the misspealed letter in the links below?</span>
+            <span class="code__highlighted">https://www.goagle.com</span>
+            <span class="code__highlighted">https://www.instigram.com</span>
+            <span class="code__highlighted">https://www.youture.com</span>            
+            </div>
+          </p>
+        </div>
+        <form class="quiz__form">
+          <label for="quizAnswer" class="sr-only">Input Answer:</label>
+          <input
+            type="text"
+            name="quizAnswer"
+            id="quizAnswer"
+            placeholder="Enter answer"
+            class="quiz__input"
+            required />
+          <button type="submit" class="btn btn__submit quiz__btn">Submit</button>
+        </form>
+        <img
+          src="./images/form=correct.png"
+          alt=""
+          class="quiz__form-feedback hide" />
+      </section>
+  </body>
+</html>
