@@ -1,201 +1,5 @@
-@font-face {
-    font-family: Raqami;
-    src: url(./assets/alfont_com_AlFont_com_Raqami.ttf);
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Raqami;
-  }
-  
-  body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(
-      130deg,
-       hsla(243, 100%, 41%, 1) 0%,
-      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
-      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
-      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
-      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
-      hsla(1, 100%, 58%, 1) 100%
-    );
-  }
-  
-  body::after {
-    position: absolute;
-    content: '';
-    width: 280px;
-    height: 280px;
-    bottom: 0;
-    left: 0;
-    background-image: url(./images/BG.png);
-    background-position: right top;
-    background-size: 140%;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-  
-  main {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    width: 100%;
-    max-width: 600px;
-    min-height: 100vh;
-    padding: 4rem 1rem 2rem;
-  }
-  
-  .content {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .logo {
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .text {
-    font-size: clamp(1rem, 15vw, 3rem);
-    color: white;
-  }
-  
-  .game {
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-  }
-  
-  
-  @media screen and (min-width: 1000px) {
-    body {
-      background-image: linear-gradient(
-        180deg,
-            hsla(243, 100%, 41%, 1) 0%,
-      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
-      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
-      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
-      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
-      hsla(1, 100%, 58%, 1) 100%
-      );
-    }
-  
-    body::after {
-      width: 38%;
-      height: 90%;
-      top: 0;
-      bottom: auto;
-      right: 0;
-      left: auto;
-      background-image: url(./images/BG.png);
-      background-position: left -120px;
-      background-size: cover;
-    }
-  
-    main {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 1rem;
-      max-width: 100%;
-      padding: 2rem 3rem;
-    }
-  
-    .content {
-      grid-column: 1/2;
-      grid-row: 1/2;
-      padding-top: 5rem;
-      gap: 3rem;
-    }
-  
-    .logo {
-      width: 100%;
-      max-width: 600px;
-    }
-  
-    .text {
-      font-size: 5rem;
-    }
-  
-    .game {
-      grid-column: 2/3;
-      grid-row: 1/2;
-      align-items: flex-start;
-      justify-content: center;
-    }
-  
-    .container {
-      width: 450px;
-      height: 450px;
-    }
-   
-  }
-  
-  @media screen and (min-width: 1280px) {
-    body::after {
-      width: 40%;
-      height: 75%;
-      background-position: -30% -120px;
-      background-size: 130%;
-    }
-  
-    .container {
-      width: 530px;
-      height: 530px;
-    }
- 
-  }
-  
-  @media screen and (min-width: 1440px) {
-    body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    }
-    
-    .game {
-      padding-top: 80px;
-    }
-  
-    .container {
-      width: 560px;
-      height: 560px;
-    }
- 
-  }
-  
-  .bodyOverflow {
-    overflow: hidden;
-  }
-  
-
-  /*
-  CSS Reset from
-  Josh: https://www.joshwcomeau.com/css/custom-css-reset/
-  Andy-bell: https://andy-bell.co.uk/a-more-modern-css-reset/
+/*
+  CSS Reset 
 */
 *,
 *::before,
@@ -214,7 +18,11 @@ html {
   scroll-behavior: smooth;
 }
 
-
+body {
+  line-height: 1.5;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
 
 h1,
 h2,
@@ -243,13 +51,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-a {
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-  cursor: pointer;
-}
-
 img,
 picture,
 video,
@@ -276,37 +77,30 @@ ol {
   margin: 0;
   padding: 0;
 }
-
-address {
-  font-style: normal;
-}
 /* Reset Ends */
 
-/* Hides screen-reader contents */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* Custom properties */
+:root {
+  /* primary colors */
+  --purple: hsl(263, 73%, 27%);
+  --btn-purple: hsl(264, 100%, 69%);
+  --btn-dark-purple: hsl(265, 46%, 49%);
+  --red: hsl(340, 62%, 35%);
+
+  /* neutral colors */
+  --white: hsl(0, 0%, 100%);
 }
 
-/* Fonts */
-@font-face {
-  font-family: Retropix;
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
-  src: url(./assets/retropix.otf);
+  color: var(--white);
+  text-align: center;
 }
-
-
 
 /* btn component starts */
 .btn {
-   
   display: inline-block;
   padding: 12px 28px;
   margin: 10px;
@@ -341,151 +135,146 @@ address {
 
 /* btn component ends */
 
-html {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1rem;
-  color: var(--white);
-}
-
- body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(
-      130deg,
-       hsla(243, 100%, 41%, 1) 0%,
-      hsla(261, 89%, 27%, 0.9) 30%, /* You can adjust the alpha value (0.7) for transparency */
-      hsla(330, 100%, 31%, 0.8) 49%, /* You can adjust the alpha value (0.5) for transparency */
-      hsla(354, 80%, 47%, 0.8) 66%, /* You can adjust the alpha value (0.8) for transparency */
-      hsla(1, 100%, 58%, 0.9) 82%, /* You can adjust the alpha value (0.82) for transparency */
-      hsla(1, 100%, 58%, 1) 100%
-    );
-  }
-
-main {
-  grid-row: 1/2;
-  grid-column: 1/2;
+body {
+  position: relative;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 90% 10%;
-  width: min(100%, 900px);
-  margin: 0 auto;
+  grid-template-rows: 30% 70%;
   padding: 1rem;
-  background-image: url(./images/question\ mark.png);
-  background-repeat: no-repeat;
-  background-position: -75px 105%;
-  background-size: 200px;
   overflow: hidden;
-}
-
-
-
-.quiz {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  
-}
-
-.quiz__question {
-  display: grid;
-  place-content: center;
-  max-width: 80ch;
-  font-family: 'Retropix', monospace;
-  margin-top: 80%;
-}
-
-.quiz__question .code span {
-  display: block;
-  color: aliceblue;
-  padding: 5px;
- 
-}
-
-.quiz__question .code .code__highlighted {
- align-items: center;
-text-align: center;
-}
-
-
-.btn__option {
-  width: 250px;
-}
-
-.quiz__btn:is(:disabled) {
-  pointer-events: none;
-}
-
-.quiz__option_correct {
+  background-size: 100%;
+  background-repeat: no-repeat;
   background-image: linear-gradient(
-    to bottom right,
-    var(--btn-green),
-    var(--btn-dark-green)
-  );
-  box-shadow: 0px 4px 0px var(--btn-dark-green);
-}
-
-.quiz__option_correct:is(:hover) {
-  box-shadow: 0px 6px 0px var(--btn-dark-green);
-}
-
-.quiz__option_correct:is(:active) {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--btn-green),
-    var(--btn-dark-green)
-  );
-  box-shadow: 0px 4px 0px var(--btn-dark-green);
-}
-
-.quiz__option_wrong {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--btn-red),
-    var(--btn-dark-red)
-  );
-  box-shadow: 0px 4px 0px var(--btn-dark-red);
-}
-
-.quiz__option_wrong:is(:hover) {
-  box-shadow: 0px 6px 0px var(--btn-dark-red);
-}
-
-.quiz__option_wrong:is(:active) {
-  background-image: linear-gradient(
-    to bottom right,
-    var(--btn-dark-red),
-    var(--btn-red)
+    130deg,
+    hsla(243, 100%, 41%, 1) 0%,
+    hsla(261, 89%, 27%, 0.9) 30%,
+    hsla(330, 100%, 31%, 0.8) 49%,
+    hsla(354, 80%, 47%, 0.8) 66%,
+    hsla(1, 100%, 58%, 0.9) 82%,
+    hsla(1, 100%, 58%, 1) 100%
   );
 }
 
-.quiz__next-btn {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  display: block;
-  border: none;
-  background: none;
-  width: 50px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: 15%;
-  margin-bottom: 20px;
+body::after {
+  position: absolute;
+  content: '';
+  width: 280px;
+  height: 280px;
+  bottom: 0;
+  left: 0;
+  background-image: url(./images/BG.png);
+  background-position: right top;
+  background-size: 140%;
+  background-repeat: no-repeat;
+  z-index: -1;
   transition: all 0.5s ease;
 }
 
-.quiz__next-btn:is(:disabled) {
-  opacity: 0.3;
+.logo {
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
-.quiz__next-btn > img {
-  max-width: 30px;
+.logo__img {
   margin: auto;
+  max-width: 300px;
+  transform: translateY(65%);
+  transition: all 1s ease;
+}
+
+.logo__img--after {
+  transform: translateX(0%);
+}
+
+.main {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  grid-column: auto;
+  grid-template-rows: 1fr 1fr;
+  transition: all 1s ease;
+}
+
+.main--after {
+  grid-template-rows: 0.4fr 1.6fr;
+}
+
+.main__heading {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 150px);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 300px;
+  transition: all 1s ease;
+}
+
+.main__heading--after {
+  top: 35%;
+}
+
+.intro {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.intro--after {
+  animation: hide-section 1s ease-in;
+}
+
+.intro__paragraph {
+  max-width: 35ch;
+}
+
+.intro__btn {
+  max-width: 140px;
+}
+
+.game {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.7fr 1.3fr;
+  gap: 20px;
+}
+
+.game--after {
+  animation: show-section 1s ease-in;
+}
+
+.game_hide {
+  animation: hide-section 1s ease-in;
+}
+
+.game__question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.game__heading {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.game__paragraph {
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: left;
+  padding-inline-start: 15px;
+}
+
+.game__paragraph::marker {
+  content: '#';
 }
 
 .quiz__form {
@@ -497,7 +286,6 @@ text-align: center;
 
 .quiz__input {
   color: var(--white);
-  margin: 80px;
   padding: 12px 28px;
   border: none;
   border-radius: 10px;
@@ -513,9 +301,271 @@ text-align: center;
   color: var(--white);
 }
 
+.quiz__input_invalid {
+  animation: shake-form-input 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translateX(0);
+  border: 1px solid var(--red);
+}
 
+.quiz__feedback-text {
+  position: absolute;
+  top: 50%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  left: calc(50% - 5ch);
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 10ch;
+  animation: show-feedback 1s ease-in;
+}
 
-  .btn__option {
-    width: 400px;
+.quiz__feedback-img {
+  position: absolute;
+  top: 60%;
+  left: calc(50% - 150px);
+  margin: 0 auto;
+  margin-top: 15px;
+  width: auto;
+  max-width: 300px;
+  animation: mirrorflip 0.5s 0s linear, show-feedback 1s ease-in;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 375px) {
+  .main__heading {
+    left: calc(50% - 175px);
+    font-size: 2.4rem;
+    width: 350px;
   }
 
+  .quiz__feedback-img {
+    left: calc(50% - 175px);
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(
+      180deg,
+      hsla(243, 100%, 41%, 1) 0%,
+      hsla(261, 89%, 27%, 0.9) 30%,
+      hsla(330, 100%, 31%, 0.8) 49%,
+      hsla(354, 80%, 47%, 0.8) 66%,
+      hsla(1, 100%, 58%, 0.9) 82%,
+      hsla(1, 100%, 58%, 1) 100%
+    );
+  }
+
+  body::after {
+    left: auto;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-position: -50% 100%;
+    background-size: cover;
+  }
+
+  .logo__img {
+    max-width: 450px;
+    transform: translateY(40%);
+  }
+
+  .logo__img--after {
+    transform: translateX(0%);
+  }
+
+  .main__heading {
+    left: calc(50% - 250px);
+    font-size: 3.5rem;
+    width: 500px;
+  }
+
+  .main__heading--after {
+    top: 33%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body::after {
+    left: auto;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-position: -200% 100%;
+    background-size: cover;
+  }
+}
+
+/* glitch styling */
+.glitch {
+  /* position: relative; */
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  letter-spacing: 1px;
+  z-index: 1;
+  animation: shift 3s ease-in-out infinite alternate;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #8b00ff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
+  color: #00e571;
+  z-index: -2;
+}
+
+/* Animation */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes shift {
+  0%,
+  40%,
+  44%,
+  58%,
+  61%,
+  65%,
+  69%,
+  73%,
+  100% {
+    transform: skewX(0deg);
+  }
+
+  41% {
+    transform: skewX(10deg);
+  }
+
+  42% {
+    transform: skewX(-10deg);
+  }
+
+  59% {
+    transform: skewX(40deg) skewY(10deg);
+  }
+
+  60% {
+    transform: skewX(-40deg) skewY(-10deg);
+  }
+
+  63% {
+    transform: skewX(10deg) skewY(-5deg);
+  }
+
+  70% {
+    transform: skewX(-50deg) skewY(-20deg);
+  }
+
+  71% {
+    transform: skewX(10deg) skewY(-10deg);
+  }
+}
+
+@keyframes mirrorflip {
+  0% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+  }
+}
+
+@keyframes hide-section {
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes show-section {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes show-feedback {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes shake-form-input {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
