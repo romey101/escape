@@ -12,7 +12,6 @@ const form = document.querySelector('.quiz__form');
 const formInput = document.querySelector('.quiz__input');
 const submitBtn = document.querySelector('.btn__submit');
 const feedbackImg = document.querySelector('.quiz__feedback-img');
-const quizFeedback = document.querySelector('.quiz__message');
 
 // Variables
 let userAnswer;
@@ -92,7 +91,6 @@ const showVictory = () => {
 
 const showFeedback = () => {
   feedbackImg.classList.remove('hide');
-  quizFeedback.classList.remove('hide');
 };
 
 const showError = () => {

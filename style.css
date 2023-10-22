@@ -310,29 +310,12 @@ body::after {
 .quiz__feedback-img {
   position: absolute;
   top: 50%;
-  left: calc(50% - 50px);
+  left: calc(50% - 150px);
   margin: 0 auto;
   margin-top: 15px;
-  max-width: 100px;
+  width: auto;
+  max-width: 300px;
   animation: mirrorflip 0.5s 0s linear, show-feedback 1s ease-in;
-}
-
-.quiz__message {
-  position: absolute;
-  top: 70%;
-  left: calc(50% - 17.5ch);
-  animation: show-feedback 1s ease-in;
-}
-
-.game__feedback-heading {
-  font-weight: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.game__feedback-paragraph {
-  font-weight: 300;
-  max-width: 35ch;
-  margin: 0 auto;
 }
 
 .hide {
@@ -344,6 +327,11 @@ body::after {
     left: calc(50% - 175px);
     font-size: 2.4rem;
     width: 350px;
+  }
+
+  .quiz__feedback-img {
+    left: calc(50% - 175px);
+    max-width: 350px;
   }
 }
 
