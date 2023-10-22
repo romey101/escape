@@ -4,42 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>spin wheel</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./locale.js" type="module"></script>
-    <script src="./script.js" type="module" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <!-- <div class="bulit"></div> -->
-    <main>
-      <section class="content">
-        <img src="./images/LOGO.png" alt="" class="logo" />
-        <h1 class="text">Escape the room</h1>
-      </section>
-      <section class="quiz" data-type="form">
-        <div class="quiz__question">
-          <p class="code">
-            <span class="code__highlighted">Find the misspealed letter in the links below?</span>
-            <span class="code__highlighted">https://www.goagle.com</span>
-            <span class="code__highlighted">https://www.instigram.com</span>
-            <span class="code__highlighted">https://www.youture.com</span>            
-            </div>
-          </p>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./images/LOGO.png" alt="" class="logo__img" />
+    </div>
+    <!-- Logo -->
+    <main class="main">
+      <!-- Page Heading Text -->
+      <h1 data-glitch="Escape the Room" class="main__heading glitch">
+        Escape the Room
+      </h1>
+      <!-- Page Heading Text -->
+
+      <!-- Game Intro Section -->
+      <div class="intro">
+        <p class="intro__paragraph">
+          Can you decipher the clues, solve the puzzle, and escape in time?
+        </p>
+        <button class="btn intro__btn">Yes, I can!</button>
+      </div>
+      <!-- Game Intro Section -->
+
+      <!-- Game Section -->
+      <section class="game hide">
+        <!-- Game Question -->
+        <div class="game__question">
+          <h2 class="game__heading">
+            Find the misspelled letters in the links below:
+          </h2>
+          <ol>
+            <li class="game__paragraph">https://www.goagle.com</li>
+            <li class="game__paragraph">https://www.instigram.com</li>
+            <li class="game__paragraph">https://www.youture.com</li>
+          </ol>
         </div>
-        <form class="quiz__form">
-          <label for="quizAnswer" class="sr-only">Input Answer:</label>
-          <input
-            type="text"
-            name="quizAnswer"
-            id="quizAnswer"
-            placeholder="Enter answer"
-            class="quiz__input"
-            required />
-          <button type="submit" class="btn btn__submit quiz__btn">Submit</button>
-        </form>
+        <!-- Game Question -->
+
+        <!-- Game Answer Section -->
+        <div class="game__answer">
+          <!-- Game Form -->
+          <form class="quiz__form">
+            <label for="quizAnswer" class="sr-only">Input Answer:</label>
+            <input
+              type="text"
+              name="quizAnswer"
+              id="quizAnswer"
+              placeholder="Enter answer"
+              class="quiz__input"
+              required />
+            <button type="submit" class="btn btn__submit quiz__btn">
+              Submit
+            </button>
+          </form>
+          <!-- Game Form -->
+        </div>
+
+        <!-- Game Feedback -->
         <img
           src="./images/form=correct.png"
           alt=""
-          class="quiz__form-feedback hide" />
+          class="quiz__feedback-img hide" />
+        <div class="quiz__message hide">
+          <h3 class="game__feedback-heading">Congratulations!</h3>
+          <p class="game__feedback-paragraph">
+            You've successfully escaped from the room. Well done, adventurer!
+          </p>
+        </div>
+        <!-- Game Feedback -->
+
+        <!-- Game Answer Section -->
       </section>
+      <!-- Game Section -->
+    </main>
   </body>
 </html>
