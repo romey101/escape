@@ -11,6 +11,7 @@ const gameQuestionSection = document.querySelector('.game__question');
 const form = document.querySelector('.quiz__form');
 const formInput = document.querySelector('.quiz__input');
 const submitBtn = document.querySelector('.btn__submit');
+const feedbackText = document.querySelector('.quiz__feedback-text');
 const feedbackImg = document.querySelector('.quiz__feedback-img');
 
 // Variables
@@ -74,6 +75,7 @@ const verifyAnswer = (answer) => {
   if (answer) {
     if (answer === quizAnswer) {
       showVictory();
+      formInput.value = '';
     } else {
       showError();
     }
@@ -90,6 +92,7 @@ const showVictory = () => {
 };
 
 const showFeedback = () => {
+  feedbackText.classList.remove('hide');
   feedbackImg.classList.remove('hide');
 };
 

@@ -307,9 +307,21 @@ body::after {
   border: 1px solid var(--red);
 }
 
-.quiz__feedback-img {
+.quiz__feedback-text {
   position: absolute;
   top: 50%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  left: calc(50% - 5ch);
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 10ch;
+  animation: show-feedback 1s ease-in;
+}
+
+.quiz__feedback-img {
+  position: absolute;
+  top: 60%;
   left: calc(50% - 150px);
   margin: 0 auto;
   margin-top: 15px;
